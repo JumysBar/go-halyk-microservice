@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "./;example";
+
+service Incrementor {
+    rpc Inc(NumArgument) returns (NumResult); // simple
+    rpc NInc(NNumArgument) returns (stream NumResult); // server-side stream
+    rpc Sum(stream NumArgument) returns (NumResult); // client-side stream
+    rpc StreamSum(stream NumArgument) returns (stream NumResult); // bidirectional stream
+}
+
+message NumArgument {
+    int64 n = 1;
+}
+
+message NNumArgument {
+    int64 n = 1;
+    int32 times = 2;
+}
+
+message NumResult {
+    int64 n = 1;
+    string service_name = 2;
+}
