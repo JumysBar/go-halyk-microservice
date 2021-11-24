@@ -1,0 +1,29 @@
+{
+  "service_name": "develop",
+  "max_threads": 100,
+  "postgres": {
+    "user": "user",
+    "password": "pa$$vv0Rd",
+    "host": "postgres-halyk.kz",
+    "port": 5432,
+    "db_name": "some_db"
+  },
+  "kafka": {
+    "brokers": [
+      "kafka-01.halyk.kz:9092",
+      "kafka-02.halyk.kz:9092",
+      "kafka-03.halyk.kz:9092"
+    ],
+    "topic_consume": "some_topic",
+    "row_type_produce": "json",
+    "max_fetch_size": 50000,
+    "max_wait": 5
+  },
+  "redis": {
+    "user": "redis-user",
+    "password": "password-redis",
+    "address": "redis-3-halyk.kz:6379",
+    "db": 0
+  },
+  "some_port": "333"
+}
